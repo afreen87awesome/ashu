@@ -53,14 +53,60 @@ with open(csv_file, 'r') as file:
 ## Imagehistogram
 
 ```
+import numpy as np
+import cv2 as cv
+from matplotlib import pyplot as plt
+ 
+img = cv.imread("/home/afreen-mohammad/Downloads/flowers.jpeg")
+cv.imwrite("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg",img)
+assert img is not None, "file could not be read, check with os.path.exists()"
+color = ('b','g','r')
+for i,col in enumerate(color):
+ histr = cv.calcHist([img],[i],None,[256],[0,256])
+ plt.plot(histr,color = col)
+ plt.xlim([0,256])
+plt.show()
 ```
 
 ## Range
 
 ```
+num = list(range(10))
+previousNum = 0
+for i in num:
+    sum = previousNum + i
+    print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
+    previousNum=i
 ```
 
 ## video
 
 ```
+
+# import the opencv library 
+import cv2 
+  
+  
+# define a video capture object 
+vid = cv2.VideoCapture(0) 
+  
+while(True): 
+      
+    # Capture the video frame 
+    # by frame 
+    ret, frame = vid.read() 
+  
+    # Display the resulting frame 
+    cv2.imshow('frame', frame) 
+      
+    # the 'q' button is set as the 
+    # quitting button you may use any 
+    # desired button of your choice 
+    if cv2.waitKey(1) & 0xFF == ord('q'): 
+        break
+  
+# After the loop release the cap object 
+vid.release() 
+# Destroy all the windows 
+cv2.destroyAllWindows() 
 ```
