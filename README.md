@@ -68,7 +68,7 @@ for i,col in enumerate(color):
 plt.show()
 ```
 
-## Range
+## Range-sum
 
 ```
 num = list(range(10))
@@ -79,7 +79,7 @@ for i in num:
     previousNum=i
 ```
 
-## video
+## Webcamvideo
 
 ```
 
