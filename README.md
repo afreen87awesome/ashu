@@ -121,7 +121,9 @@ A histogram in the context of image processing represents the frequency distribu
 ## Importing Libraries:
 
 import numpy as np [NumPy is imported to handle numerical operations and arrays efficiently.]
+
 import cv2 as cv [OpenCV is imported for image processing tasks]
+
 from matplotlib import pyplot as plt [Matplotlib is imported for plotting histograms]
 ``
 ## Loading an Image:
