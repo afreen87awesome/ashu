@@ -243,3 +243,61 @@ Current number 7 Previous Number 6 is 13
 Current number 8 Previous Number 7 is 15
 
 Current number 9 Previous Number 8 is 17
+
+
+
+## 4 Project:
+Webcam
+This Python code utilizes the OpenCV library to capture video from a camera device (such as a webcam) and display it in a window frame.
+
+## Import OpenCV Library
+```
+import cv2
+```
+The code starts by importing the OpenCV library using the import cv2 statement. OpenCV (Open Source Computer Vision Library) is a popular library for computer vision and image processing tasks.
+
+## Define Video Capture Object
+```
+vid = cv2.VideoCapture(0) 
+```
+creates a VideoCapture object named vid. This object is used to capture video frames from a camera device. The argument 0 indicates that the default camera device (usually the webcam) should be used. If you have multiple cameras connected, you can specify the index of the camera you want to use.
+
+## Video Capture Loop:
+```
+while(True): 
+```
+The code enters a while loop (while(True)) that continues indefinitely until it's explicitly terminated by the user. Inside the loop
+```
+ ret, frame = vid.read()
+```
+This line captures a single frame from the video stream using the read() method of the vid object. It returns two values: ret (a boolean indicating whether the frame was captured successfully) and frame (the captured frame).
+
+```
+cv2.imshow('frame', frame)
+```
+This line displays the captured frame in a window named 'frame' using the imshow() function. The first argument is the window name, and the second argument is the frame to be displayed.
+
+```
+ if cv2.waitKey(1) & 0xFF == ord('q'):
+```
+This line waits for a key press event. It checks if the key pressed is 'q' (quit). If the 'q' key is pressed, the loop breaks and the program terminates.
+
+The waitKey() function waits for a specified number of milliseconds for a key event. Here, it waits for 1 millisecond (1) and performs a bitwise AND operation with 0xFF to extract the ASCII value of the key.
+```
+break
+```
+
+## Release Video Capture Object:
+```
+vid.release()
+```
+After the loop terminates, vid.release() releases the VideoCapture object, freeing up the camera resources.
+
+## Close All OpenCV Windows:
+```
+cv2.destroyAllWindows()
+```
+cv2.destroyAllWindows() closes all OpenCV windows that were opened during the execution of the program.
+
+ Webcam Output :
+ 
