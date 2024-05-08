@@ -68,13 +68,10 @@ with open(csv_file, 'r') as file:
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
 ```
 ## input Of The Code :
-```
-
 ![image](https://github.com/afreen87awesome/ashu/assets/169051698/bf14a484-b8fb-4f06-8445-4bdc58791b19)
 
 ```
 ## Output Of The Code :
-```
- ![image](https://github.com/afreen87awesome/ashu/assets/169051698/fcf933f3-6a01-46ba-9b6b-3ec5c91df01f)
+![image](https://github.com/afreen87awesome/ashu/assets/169051698/fcf933f3-6a01-46ba-9b6b-3ec5c91df01f)
 
 
