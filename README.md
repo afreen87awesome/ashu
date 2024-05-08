@@ -1,22 +1,29 @@
 ## Project Title :
 Bounding boxes
+
 A bounding box in the context of computer vision and image processing refers to a rectangular box that tightly encloses an object or region of interest in an image. It is commonly used for tasks such as object detection, object tracking, and image annotation.
 
 ## Overview :
 ```
 *The project allows users to annotate images with bounding boxes, defining regions of interest within the images.
+
 *It provides functionalities to process images by cropping them based on the annotated bounding boxes.
+
 *The project facilitates visualizing bounding boxes on images, which aids in understanding the spatial relationships between objects in the images
+
 *It assists in preparing datasets for machine learning tasks, as bounding boxes are commonly used to train object detection models.
 ````
 ## Usage Of Bounding Box :
 * Object Detection: Bounding boxes are extensively used in object detection tasks, where the goal is to detect and localize objects within an image
+* 
 * Image Segmentation: In semantic segmentation tasks, bounding boxes are often used as annotations to define regions of interest within images
 ``
 ## Importing Libraries :
 ```
 import os [Provides functions for interacting with the operating system]
+
 import csv [Allows reading and writing CSV files]
+
 from PIL import Image, ImageDraw [Part of the Python Imaging Library (PIL)]
 ```
  ## Defining File Paths :
@@ -120,35 +127,47 @@ from matplotlib import pyplot as plt [Matplotlib is imported for plotting histog
 ## Loading an Image:
 
 img = cv.imread("/home/afreen-mohammad/Downloads/flowers.jpeg")
+
 Note :- cv.imread(): This is a function from the OpenCV library (cv2 module) used to read an image from a file.
 
 ## Writing the Image:
 
 cv.imwrite("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg",img)
-Note :-cv.imwrite()is used to write the loaded image (img) to a new file at the specified path ("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg").
+
+Note :-cv.imwrite()is used to write the loaded image (img) to a new file at the specified path ("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg")
+
 *This step saves the image with the same content as the original one.
 
 ## Assert Statement:
 assert img is not None, "file could not be read, check with os.path.exists()"
+
 Note :-An assert statement is used to check if the image was loaded successfully
+
      * If the loaded image is None, meaning it could not be read, the script raises an AssertionError with the message "file could not be read, check with os.path.exists()".
 
 ## Plotting Histograms:
 color = ('b','g','r')
+
 for i,col in enumerate(color):
+
 Note :-    For each color channel, the script plots the histogram values (histr) using plt.plot().
+
   *  The color for each channel is specified ('b' for blue, 'g' for green, and 'r' for red).
+  *  
     The x-axis limits are set to range from 0 to 256 using plt.xlim([0,256]).
 
 ## Calculating Histogram:
 
 histr = cv.calcHist([img],[i],None,[256],[0,256])
+
 * This line calculates the histogram of the image img for a specific color channel indicated by the variable i, using 256 bins and a pixel value range from 0 to 255.
   
  plt.plot(histr,color = col)
+ 
 *This line plots the histogram values stored in the variable histr with the specified color col.
 
   plt.xlim([0,256])
+  
   *This line sets the x-axis limits of the plot to range from 0 to 255, ensuring that the histogram covers the entire intensity range of the color channel.
  
  ## Displaying the Plot:
@@ -192,6 +211,7 @@ plt.show()
 iteration
 
 An iteration refers to the process of repeating a set of instructions or a block of code multiple times. 
+
 In programming, iterations are commonly used within loops, which are structures that allow you to execute a block of code repeatedly until a certain condition is met or for a specified number of times.
 ```
 num = list(range(10))
