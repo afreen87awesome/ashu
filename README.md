@@ -99,7 +99,7 @@ with open(csv_file, 'r') as file:
 
 ```
 ## input Of The Code :
-
+![full_7622202030987_f306535d741c9148dc458acbbc887243_L_496](https://github.com/afreen87awesome/ashu/assets/169051698/356cc07c-83cc-4e2f-9b9f-f1bb808189dd)
 ## Output Of The Code:
 ![image](https://github.com/afreen87awesome/ashu/assets/169051698/fcf933f3-6a01-46ba-9b6b-3ec5c91df01f)
 
