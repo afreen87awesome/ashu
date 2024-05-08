@@ -103,3 +103,82 @@ with open(csv_file, 'r') as file:
 ![image](https://github.com/afreen87awesome/ashu/assets/169051698/fcf933f3-6a01-46ba-9b6b-3ec5c91df01f)
 
 
+
+## Project Title :
+   Histogram
+
+## Importing Libraries:
+
+import numpy as np [NumPy is imported to handle numerical operations and arrays efficiently.]
+import cv2 as cv [OpenCV is imported for image processing tasks]
+from matplotlib import pyplot as plt [Matplotlib is imported for plotting histograms]
+``
+## Loading an Image:
+
+img = cv.imread("/home/afreen-mohammad/Downloads/flowers.jpeg")
+Note :- cv.imread(): This is a function from the OpenCV library (cv2 module) used to read an image from a file.
+
+## Writing the Image:
+
+cv.imwrite("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg",img)
+Note :-cv.imwrite()is used to write the loaded image (img) to a new file at the specified path ("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg").
+*This step saves the image with the same content as the original one.
+
+## Assert Statement:
+assert img is not None, "file could not be read, check with os.path.exists()"
+Note :-An assert statement is used to check if the image was loaded successfully
+     * If the loaded image is None, meaning it could not be read, the script raises an AssertionError with the message "file could not be read, check with os.path.exists()".
+
+## Plotting Histograms:
+color = ('b','g','r')
+for i,col in enumerate(color):
+Note :-    For each color channel, the script plots the histogram values (histr) using plt.plot().
+  *  The color for each channel is specified ('b' for blue, 'g' for green, and 'r' for red).
+    The x-axis limits are set to range from 0 to 256 using plt.xlim([0,256]).
+
+## Calculating Histogram:
+
+histr = cv.calcHist([img],[i],None,[256],[0,256])
+* This line calculates the histogram of the image img for a specific color channel indicated by the variable i, using 256 bins and a pixel value range from 0 to 255.
+  
+ plt.plot(histr,color = col)
+*This line plots the histogram values stored in the variable histr with the specified color col.
+
+  plt.xlim([0,256])
+  *This line sets the x-axis limits of the plot to range from 0 to 255, ensuring that the histogram covers the entire intensity range of the color channel.
+ 
+ ## Displaying the Plot:
+ plt.show()
+
+## Histogram code :
+import numpy as np
+
+import cv2 as cv
+
+from matplotlib import pyplot as plt
+ 
+img = cv.imread("/home/afreen-mohammad/Downloads/flowers.jpeg")
+
+cv.imwrite("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg",img)
+
+assert img is not None, "file could not be read, check with os.path.exists()"
+
+color = ('b','g','r')
+
+for i,col in enumerate(color):
+
+ histr = cv.calcHist([img],[i],None,[256],[0,256])
+ 
+ plt.plot(histr,color = col)
+ 
+ plt.xlim([0,256])
+ 
+plt.show()
+
+
+
+## Histogram Code Input :
+
+
+## Histogram Code Output :
+/home/afreen-mohammad/my expeiment/histogram.png
