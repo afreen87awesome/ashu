@@ -183,4 +183,4 @@ plt.show()
 ![sana](https://github.com/afreen87awesome/ashu/assets/169051698/47c6cdb5-b605-4fa1-9bff-35ead764851f)
 
 ## Histogram Code Output :
-![histgram scnsht](https://github.com/afreen87awesome/ashu/assets/169051698/df587996-47a8-49e9-bd63-b6c1117470ad)
+![histgram scnsht](https://github.com/afreen87awesome/ashu/assets/169051698/c92248b2-efc4-44db-bb70-fafd48dac285)
