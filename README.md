@@ -28,44 +28,74 @@ output_dir = "/home/afreen-mohammad/Downloads/7622202030987/_with_boxes" [output
 os.makedirs(output_dir, exist_ok=True)
 ```
 ## Processing Images code:
-
+```
 def draw_boxes(image, boxes):
+
     draw = ImageDraw.Draw(image)
+
     for box in boxes:
+
         left = int(box['left'])
+
         top = int(box['top'])
+
         right = int(box['right'])
+
         bottom = int(box['bottom'])
+
         draw.rectangle([left, top, right, bottom], outline="red")
+
     return image
 
 
 def crop_image(image, boxes):
+
     cropped_images = []
+
     for box in boxes:
+
         left = int(box['left'])
+
         top = int(box['top'])
+
         right = int(box['right'])
+
         bottom = int(box['bottom'])
+
         cropped_img = image.crop((left, top, right, bottom))
+
         cropped_images.append(cropped_img)
+
     return cropped_images
 
 
 with open(csv_file, 'r') as file:
+
     csv_reader = csv.DictReader(file)
+
     for row in csv_reader:
+
         image_name = row['filename']
+
         image_path = os.path.join(image_dir, image_name)
+
         output_path = os.path.join(output_dir, image_name)
+
         image = Image.open(image_path)
+
         boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
+
         cropped_images = crop_image(image, boxes)
+
         for i, cropped_img in enumerate(cropped_images):
-            cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
+
+            cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))
+
         full_image_with_boxes = draw_boxes(image, boxes)
+
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
-``
+
+```
 ## input Of The Code :
 ![image](https://github.com/afreen87awesome/ashu/assets/169051698/bf14a484-b8fb-4f06-8445-4bdc58791b19)
 
