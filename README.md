@@ -299,5 +299,6 @@ cv2.destroyAllWindows()
 ```
 cv2.destroyAllWindows() closes all OpenCV windows that were opened during the execution of the program.
 
- Webcam Output :
+## Webcam Output :
  
+[Screencast from 08-05-24 02:20:54 PM IST.webm](https://github.com/afreen87awesome/ashu/assets/169051698/f0d4de3e-8dd4-42f4-98cc-9d15cb989bdb)
