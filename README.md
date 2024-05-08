@@ -2,6 +2,7 @@
 Bounding boxes
 
 ## Overview :
+```
 *The project allows users to annotate images with bounding boxes, defining regions of interest within the images.
 *It provides functionalities to process images by cropping them based on the annotated bounding boxes.
 *The project facilitates visualizing bounding boxes on images, which aids in understanding the spatial relationships between objects in the images
@@ -10,18 +11,21 @@ Bounding boxes
 ## Usage Of Bounding Box :
 * Object Detection: Bounding boxes are extensively used in object detection tasks, where the goal is to detect and localize objects within an image
 * Image Segmentation: In semantic segmentation tasks, bounding boxes are often used as annotations to define regions of interest within images
-
-## ## Importing Libraries :
+```
+## Importing Libraries :
+```
 import os [Provides functions for interacting with the operating system]
 import csv [Allows reading and writing CSV files]
 from PIL import Image, ImageDraw [Part of the Python Imaging Library (PIL)]
-
+```
  ## Defining File Paths :
  csv_file = "/home/afreen-mohammad/Downloads/7622202030987_bounding_box.csv"
 image_dir = "/home/afreen-mohammad/Downloads/7622202030987/" [ image copypath in downloads ]
 output_dir = "/home/afreen-mohammad/Downloads/7622202030987/_with_boxes" [output copypath in downloads]
 
-## Creating Output Directory: 
+
+## Creating Output Directory:
+```
 os.makedirs(output_dir, exist_ok=True)
 
 ## Processing Images code:
@@ -62,7 +66,13 @@ with open(csv_file, 'r') as file:
             cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
         full_image_with_boxes = draw_boxes(image, boxes)
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
+```
+## input Of The Code :
+```
 
-## input of the code :
+/home/afreen-mohammad/Downloads/7622202030987/7622202030987_f306535d741c9148dc458acbbc887243_L_491.png
+```
+## Output Of The Code :
+```
+/home/afreen-mohammad/Downloads/7622202030987/_with_boxes/0_7622202030987_f306535d741c9148dc458acbbc887243_L_490.png
 
-file:///home/afreen-mohammad/Downloads/7622202030987/7622202030987_f306535d741c9148dc458acbbc887243_L_490.png
