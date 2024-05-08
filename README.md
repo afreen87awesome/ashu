@@ -11,7 +11,7 @@ Bounding boxes
 ## Usage Of Bounding Box :
 * Object Detection: Bounding boxes are extensively used in object detection tasks, where the goal is to detect and localize objects within an image
 * Image Segmentation: In semantic segmentation tasks, bounding boxes are often used as annotations to define regions of interest within images
-```
+``
 ## Importing Libraries :
 ```
 import os [Provides functions for interacting with the operating system]
@@ -22,12 +22,11 @@ from PIL import Image, ImageDraw [Part of the Python Imaging Library (PIL)]
  csv_file = "/home/afreen-mohammad/Downloads/7622202030987_bounding_box.csv"
 image_dir = "/home/afreen-mohammad/Downloads/7622202030987/" [ image copypath in downloads ]
 output_dir = "/home/afreen-mohammad/Downloads/7622202030987/_with_boxes" [output copypath in downloads]
-
-
+``
 ## Creating Output Directory:
 ```
 os.makedirs(output_dir, exist_ok=True)
-
+```
 ## Processing Images code:
 
 def draw_boxes(image, boxes):
@@ -66,7 +65,7 @@ with open(csv_file, 'r') as file:
             cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
         full_image_with_boxes = draw_boxes(image, boxes)
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
-```
+``
 ## input Of The Code :
 ![image](https://github.com/afreen87awesome/ashu/assets/169051698/bf14a484-b8fb-4f06-8445-4bdc58791b19)
 
