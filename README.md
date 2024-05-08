@@ -7,7 +7,7 @@ Bounding boxes
 *It provides functionalities to process images by cropping them based on the annotated bounding boxes.
 *The project facilitates visualizing bounding boxes on images, which aids in understanding the spatial relationships between objects in the images
 *It assists in preparing datasets for machine learning tasks, as bounding boxes are commonly used to train object detection models.
-
+````
 ## Usage Of Bounding Box :
 * Object Detection: Bounding boxes are extensively used in object detection tasks, where the goal is to detect and localize objects within an image
 * Image Segmentation: In semantic segmentation tasks, bounding boxes are often used as annotations to define regions of interest within images
