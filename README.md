@@ -184,3 +184,63 @@ plt.show()
 
 ## Histogram Code Output :
 ![histgram scnsht](https://github.com/afreen87awesome/ashu/assets/169051698/c92248b2-efc4-44db-bb70-fafd48dac285)
+
+
+## 3Project: 
+iteration
+
+An iteration refers to the process of repeating a set of instructions or a block of code multiple times. 
+In programming, iterations are commonly used within loops, which are structures that allow you to execute a block of code repeatedly until a certain condition is met or for a specified number of times.
+```
+num = list(range(10))
+```
+This line creates a list named num containing numbers from 0 to 9 (inclusive). range(10) generates numbers from 0 up to (but not including) 10, and list() converts it into a list.
+```
+previousNum = 0
+```
+This line initializes a variable previousNum to 0. This variable is used to keep track of the previous number in each iteration of the loop
+```
+for i in num:
+```
+This line starts a for loop that iterates over each element (i) in the num list.
+```
+ sum = previousNum + i
+```
+In each iteration of the loop, this line calculates the sum of the current number (i) and the previous number (previousNum) and stores it in a variable named sum.
+```
+    print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
+```
+This line prints the current number (i), the previous number (previousNum), and their sum. However, there's an issue here: the strings are concatenated without any spaces or punctuation between them, which can make the output difficult to read.
+```
+    previousNum=i
+```
+This line updates the value of previousNum to the current number (i) for the next iteration of the loop.
+
+## Iteration Oral Code :
+num = list(range(10))
+previousNum = 0
+for i in num:
+    sum = previousNum + i
+    print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
+    previousNum=i
+
+## Iteration Code Output :
+Current number 0 Previous Number 0 is 0
+
+Current number 1 Previous Number 0 is 1
+
+Current number 2 Previous Number 1 is 3
+
+Current number 3 Previous Number 2 is 5
+
+Current number 4 Previous Number 3 is 7
+
+Current number 5 Previous Number 4 is 9
+
+Current number 6 Previous Number 5 is 11
+
+Current number 7 Previous Number 6 is 13
+
+Current number 8 Previous Number 7 is 15
+
+Current number 9 Previous Number 8 is 17
