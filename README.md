@@ -1,5 +1,6 @@
 ## Project Title :
 Bounding boxes
+A bounding box in the context of computer vision and image processing refers to a rectangular box that tightly encloses an object or region of interest in an image. It is commonly used for tasks such as object detection, object tracking, and image annotation.
 
 ## Overview :
 ```
@@ -107,6 +108,7 @@ with open(csv_file, 'r') as file:
 
 ## Project Title :
    Histogram
+   
 A histogram in the context of image processing represents the frequency distribution of pixel intensity values in an image. It plots the number of pixels for each intensity value on a graph, allowing you to visualize the distribution of brightness or color levels within the image.
 
 ## Importing Libraries:
