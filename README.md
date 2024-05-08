@@ -181,4 +181,4 @@ plt.show()
 
 
 ## Histogram Code Output :
-/home/afreen-mohammad/my expeiment/histogram.png
+![histgram scnsht](https://github.com/afreen87awesome/ashu/assets/169051698/df587996-47a8-49e9-bd63-b6c1117470ad)
