@@ -277,7 +277,10 @@ Current number 9 Previous Number 8 is 17
 
 
 ## 4 Project:
+```
 Webcam
+```
+
 This Python code utilizes the OpenCV library to capture video from a camera device (such as a webcam) and display it in a window frame.
 
 ## Import OpenCV Library
@@ -286,48 +289,114 @@ import cv2
 ```
 The code starts by importing the OpenCV library using the import cv2 statement. OpenCV (Open Source Computer Vision Library) is a popular library for computer vision and image processing tasks.
 
-## Define Video Capture Object
+## Initializing the Video Capture:
+# Create an object to read  
+# from camera 
 ```
-vid = cv2.VideoCapture(0) 
+video = cv2.VideoCapture(0) 
 ```
-creates a VideoCapture object named vid. This object is used to capture video frames from a camera device. The argument 0 indicates that the default camera device (usually the webcam) should be used. If you have multiple cameras connected, you can specify the index of the camera you want to use.
+   It initializes the video capture object video by calling cv2.VideoCapture(0), which opens the default camera (webcam) for capturing video.
 
-## Video Capture Loop:
+## Checking if Camera is Opened:
+# We need to check if camera 
+# is opened previously or not 
+```
+if (video.isOpened() == False):
+```
+    print("Error reading video file") 
+```
+It checks if the camera is opened successfully. If not, it prints an error message.
+```
+## Setting Resolutions:
+
+# We need to set resolutions. 
+
+# so, convert them from float to integer.
+```
+frame_width = int(video.get(3))
+```
+frame_height = int(video.get(4)) 
+```  
+size = (frame_width, frame_height)   
+```
+It retrieves the frame width and height of the captured video and converts them to integers. These dimensions are necessary for configuring the output video size.
+
+## Defining Output Video Settings: 
+
+# Below VideoWriter object will create 
+# a frame of above defined The output  
+# is stored in 'filename.avi' file. 
+```
+result = cv2.VideoWriter('camera.avi',  
+cv2.VideoWriter_fourcc(*'MJPG'), 
+                         10, size) 
+```
+It defines the output video file ('camera.avi') and its properties using the cv2.VideoWriter class. It specifies the codec ('MJPG'), frame rate (10 frames per second in this case), and the size of each frame.
+
+## Capturing and Writing Video:
 ```
 while(True): 
+    ret, frame = video.read() 
+```  
+    if ret == True:  
+ ``` 
+        # Write the frame into the 
+        # file 'filename.avi'
 ```
-The code enters a while loop (while(True)) that continues indefinitely until it's explicitly terminated by the user. Inside the loop
+        result.write(frame) 
 ```
- ret, frame = vid.read()
+        cv2.imshow('Frame', frame) 
 ```
-This line captures a single frame from the video stream using the read() method of the vid object. It returns two values: ret (a boolean indicating whether the frame was captured successfully) and frame (the captured frame).
+Inside the while loop, it continuously captures frames from the camera using video.read(), writes each frame to the output video file using result.write(frame), and displays the frame using cv2.imshow('Frame', frame).
 
+## Stopping the Process:
+        # Press S on keyboard  
+        # to stop the process 
+ ```
+        if cv2.waitKey(1) & 0xFF == ord('s'):
 ```
-cv2.imshow('frame', frame)
+It checks for the 's' key press using cv2.waitKey(1) & 0xFF == ord('s'). If the 's' key is pressed, it breaks out of the loop, stopping the video capture process.
 ```
-This line displays the captured frame in a window named 'frame' using the imshow() function. The first argument is the window name, and the second argument is the frame to be displayed.
+            break
+```
+    # Break the loop 
+    else:
+```
+        break
+```
 
-```
- if cv2.waitKey(1) & 0xFF == ord('q'):
-```
-This line waits for a key press event. It checks if the key pressed is 'q' (quit). If the 'q' key is pressed, the loop breaks and the program terminates.
+Note:    The break Statement: When encountered inside a loop (while loop in this case), the break statement immediately terminates the loop, regardless of any conditions. It's typically used to exit the loop prematurely when a certain condition is met.
 
-The waitKey() function waits for a specified number of milliseconds for a key event. Here, it waits for 1 millisecond (1) and performs a bitwise AND operation with 0xFF to extract the ASCII value of the key.
-```
-break
-```
+* The else Block: In Python, the else block associated with a loop is executed only if the loop completes normally without encountering a break statement.
+*   
+*The else block after while is redundant because the loop will only reach that point if ret == False, which means video.read() has failed to read a frame from the video capture device. In such a case, the loop will already break due to the else block within the loop itself.
 
-## Release Video Capture Object:
-```
-vid.release()
-```
-After the loop terminates, vid.release() releases the VideoCapture object, freeing up the camera resources.
+* Therefore, you can safely remove the else: break part without affecting the functionality of the code.
 
-## Close All OpenCV Windows:
+## Releasing Resources:
+# When everything done, release  
+# the video capture and video  
+# write objects 
 ```
-cv2.destroyAllWindows()
+video.release()
 ```
-cv2.destroyAllWindows() closes all OpenCV windows that were opened during the execution of the program.
+result.release()
+```
+After the loop exits, it releases the video capture and video write objects using video.release() and result.release(), respectively.
+
+## Closing Windows:
+```
+# Closes all the frames :
+```
+cv2.destroyAllWindows() 
+```
+It closes all OpenCV windows using cv2.destroyAllWindows().
+
+## Print Success Message:
+```
+print("The video was successfully saved")
+```
+Finally, it prints a message indicating that the video was successfully saved.
 
 ## Webcam Output :
  
