@@ -242,10 +242,15 @@ This line updates the value of previousNum to the current number (i) for the nex
 
 ## Iteration Oral Code :
 num = list(range(10))
+
 previousNum = 0
+
 for i in num:
+
     sum = previousNum + i
+    
     print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
+    
     previousNum=i
 
 ## Iteration Code Output :
