@@ -1,12 +1,8 @@
 import cv2 
-import argparse
-
-parser = argparse.ArgumentParser(description='Record video from camera')
-parser.add_argument('--output', type=str, default='output.avi', help='Output file path')
-parser.add_argument('--codec', type=str, default='JPEG', help='Codec for video writing (default: JPEG)')
-args = parser.parse_args()  
+  
    
-
+# Create an object to read  
+# from camera 
 video = cv2.VideoCapture(0) 
    
 # We need to check if camera 
@@ -24,8 +20,9 @@ size = (frame_width, frame_height)
 # Below VideoWriter object will create 
 # a frame of above defined The output  
 # is stored in 'filename.avi' file. 
-result = cv2.VideoWriter(args.output,    
-                  cv2.VideoWriter_fourcc(*args.codec), 10, size)
+result = cv2.VideoWriter('camera.avi',  
+                         cv2.VideoWriter_fourcc(*'MJPG'), 
+                         10, size) 
     
 while(True): 
     ret, frame = video.read() 
@@ -35,9 +32,6 @@ while(True):
         # Write the frame into the 
         # file 'filename.avi' 
         result.write(frame) 
-  
-        # Display the frame 
-        # saved in the file 
         cv2.imshow('Frame', frame) 
   
         # Press S on keyboard  
@@ -58,4 +52,4 @@ result.release()
 # Closes all the frames 
 cv2.destroyAllWindows() 
    
-print("The video was successfully saved", args.output)
+print("The video was successfully saved")
